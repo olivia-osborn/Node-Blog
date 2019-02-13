@@ -9,7 +9,7 @@ In this challenge, you will **design** and build an API that satisfies the requi
 You are allowed, and **encouraged**, to collaborate with other peers. Please follow the twenty-minute rule, before seeking support from your PM and Instructor.
 
 ## Project Set Up
-
+ 
 - [ ] Create a forked copy of this project.
 - [ ] Add your project manager as collaborator on Github.
 - [ ] Clone your OWN version of the repository.
