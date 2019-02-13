@@ -13,7 +13,6 @@ router.get("/", async (req, res) => {
 });
 
 router.get("/:id", async (req, res) => {
-    
     try {
         const post = await Posts.getById(req.params.id)
         if (post) {
@@ -23,6 +22,28 @@ router.get("/:id", async (req, res) => {
         }
     } catch (error) {
         res.status(500).json({ message: "Error fetching post data"})
+    }
+})
+
+router.post("/", async (req, res) => {
+    try {
+        const post = await Posts.insert(req.body)
+        res.status(201).json(post)
+    } catch (error) {
+        res.status(500).json({ message: "Error adding the post"})
+    }
+})
+
+router.delete("/:id", async (req, res) => {
+    try {
+        const post = await Posts.remove(req.params.id)
+        if (post) {
+            res.status(200).json({ message: "Post has been removed!"})
+        } else {
+            res.status(404).json({ message: "Could not find post with that id"})
+        }
+    } catch (error) {
+        res.status(500).json({ message: "Error deleting the post"})
     }
 })
 
